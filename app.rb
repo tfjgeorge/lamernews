@@ -688,7 +688,7 @@ def get_news_by_id(news_ids,opt={})
         news.each{|n|
             # Adjust rank if too different from the real-time value.
             hash = {}
-            n.each_slice(2) {|k,v|
+            n.each {|k,v|
                 hash[k] = v
             }
             update_news_rank_if_needed(hash) if opt[:update_rank]
